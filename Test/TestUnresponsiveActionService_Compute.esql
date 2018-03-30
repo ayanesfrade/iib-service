@@ -4,7 +4,7 @@ CREATE COMPUTE MODULE TestUnresponsiveActionService_Compute
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
 		-- CALL CopyMessageHeaders();
-		SET OutputRoot.JSON.Data.Message = 'Hello World';
+		SET OutputRoot.JSON.Data.Message = 'Hello there, World!';
 		SET OutputRoot.JSON.Data.ProcessID = ProcessId;
 		RETURN TRUE;
 	END;
