@@ -1,0 +1,61 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "api_test",
+    "version" : "1.0.0",
+    "description" : "api_test"
+  },
+  "paths" : {
+    "/message" : {
+      "get" : {
+        "operationId" : "getMessage",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve message",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "type" : "string",
+          "required" : true
+        }, {
+          "name" : "company",
+          "in" : "query",
+          "type" : "string"
+        } ]
+      },
+      "post" : {
+        "operationId" : "postMessage",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful."
+          }
+        },
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "description" : "Insert a message",
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "schema" : {
+            "$ref" : "#/definitions/grettings"
+          },
+          "description" : "The request body for the operation",
+          "required" : true
+        } ]
+      }
+    }
+  },
+  "basePath" : "/api_test/v1",
+  "definitions" : {
+    "grettings" : {
+      "type" : "object"
+    }
+  }
+}
